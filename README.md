@@ -1,7 +1,7 @@
 djangularjs
 ===
 
-A project template for a single page app in django that uses, angularjs, bootstrap, and the django-rest-framework. This project template has made several opininted decisions so be wary.  
+A project template for a single page app in django that uses, angularjs, bootstrap, and the django-rest-framework. This project template has made several opinionated decisions, so be wary.  
 
 
 Prerequisites
