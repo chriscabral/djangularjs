@@ -95,7 +95,7 @@ def custom_show_toolbar(request):
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': 'icecream_project.settings.custom_show_toolbar',
+    'SHOW_TOOLBAR_CALLBACK': '{{ project_name }}.settings.custom_show_toolbar',
     'INSERT_BEFORE': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
     'ENABLE_STACKTRACES': True,
