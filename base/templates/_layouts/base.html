@@ -32,16 +32,12 @@
   <link rel="stylesheet" href="{% static 'css/app.css' %}">
   {% block css %}{% endblock %}
   {% endcompress %}
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-  <!-- All JavaScript at the bottom, except this Modernizr build.
-       Modernizr enables HTML5 elements & feature detects for optimal performance.
-       Create your own custom Modernizr build: www.modernizr.com/download/ -->
   {% compress js %}
   <script src="{% static 'js/libs/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
   {% endcompress %}
 </head>
-<body class="{% block body_class %}{% endblock %}" {% block body_attributes %}{% endblock %}>
+<body ng-app="" class="{% block body_class %}{% endblock %}" {% block body_attributes %}{% endblock %}>
 {% block body %}
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
@@ -52,7 +48,7 @@
     {% block header %}{% endblock %}
   </header>
 
-  <div role="main">
+  <div ng-view>
     {% block content %}{% endblock %}
   </div>
 
@@ -73,12 +69,15 @@
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
   <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.9.1.min.js"><\/script>')</script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/lib/angularjs/angular-ui-router.min.js' %}"></script>
+  <script src="{% static 'js/lib/angularjs/ng-grid-2.0.7.min.js' %}"></script>
+  <script src="{% static 'js/lib/angularjs/ui-bootstrap-tpls-0.10.0.min.js' %}"></script>
   {% endblock cdn_js %}
 
   <!-- scripts concatenated and minified via django-compressor -->
   {% compress js %}
   {% block js %}
-  <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/app/config/initializer.js' %}"></script>
   {% endblock js %}
   {% endcompress %}
   <!-- end scripts -->
