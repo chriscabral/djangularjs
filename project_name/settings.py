@@ -19,6 +19,8 @@ INSTALLED_APPS = (
 
     # Third-party apps, patches, fixes
     'djcelery',
+    'django_jenkins',
+    'rest_framework',
     'debug_toolbar',
     'compressor',
     'django_nose',
@@ -93,9 +95,8 @@ def custom_show_toolbar(request):
 
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
-    'SHOW_TOOLBAR_CALLBACK': '{{ project_name }}.settings.base.custom_show_toolbar',
-    'HIDE_DJANGO_SQL': True,
-    'TAG': 'body',
+    'SHOW_TOOLBAR_CALLBACK': 'icecream_project.settings.custom_show_toolbar',
+    'INSERT_BEFORE': 'body',
     'SHOW_TEMPLATE_CONTEXT': True,
     'ENABLE_STACKTRACES': True,
 }
@@ -126,7 +127,7 @@ CACHES = {
     }
 }
 
-DEBUG = TEMPLATE_DEBUG = bool(os.environ.get('DEBUG', False))
+DEBUG = TEMPLATE_DEBUG = bool(os.environ.get('DEBUG', 'False'))
 DEV = True
 
 ALLOWED_HOSTS = []
