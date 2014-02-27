@@ -20,29 +20,12 @@
   <div ui-view="viewBody"></div>
   <div ui-view="viewFooter"></div>
 
-  <script src="{% static 'js/lib/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/lib/angularjs/jquery-1.11.0.min.js' %}"></script>
+  <script src="{% static 'js/lib/angularjs/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/angular.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/angular-ui-router.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/ng-grid-2.0.7.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/ui-bootstrap-tpls-0.10.0.min.js' %}"></script>
-  {% endblock cdn_js %}
-
-  <!-- scripts concatenated and minified via django-compressor -->
-  {% compress js %}
-  {% block js %}
   <script src="{% static 'js/app/config/initializer.js' %}"></script>
-  {% endblock js %}
-  {% endcompress %}
-  <!-- end scripts -->
-
-  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-       mathiasbynens.be/notes/async-analytics-snippet -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-{% endblock %}
 </body>
 </html>
