@@ -8,46 +8,20 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/i/378 -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
   <title>{% block page_title %}{{ _("Your Site") }}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{% endblock %}">
   <meta name="author" content="{% block meta_author %}{% endblock %}">
-
-  <!-- Mobile viewport optimized: h5bp.com/viewport -->
   <meta name="viewport" content="width=device-width">
-
-  {% block meta %}
-  {% endblock %}
-
-  {# use the CDN to get bootstrap css. can not be inside compress css block #}
-  {% block cdn_css %}
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css">
-  {% endblock cdn_css %}
-
-  {% compress css %}
-  <link rel="stylesheet" href="{% static 'css/app.css' %}">
-  {% block css %}{% endblock %}
-  {% endcompress %}
-
-  {% compress js %}
-  <script src="{% static 'js/libs/modernizr-2.6.2-respond-1.1.0.min.js' %}"></script>
-  {% endcompress %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
-<body ng-app="mainapp" class="{% block body_class %}{% endblock %}" {% block body_attributes %}{% endblock %}>
-{% block body %}
-
+<body ng-app="mainapp">
   <div ui-view="viewHeader"></div>
   <div ui-view="viewBody"></div>
   <div ui-view="viewFooter"></div>
 
-  {% block cdn_js %}
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
-  <script>window.jQuery || document.write('<script src="{{ STATIC_URL }}js/libs/jquery-1.9.1.min.js"><\/script>')</script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/lib/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/lib/angularjs/angular.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/angular-ui-router.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/ng-grid-2.0.7.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/ui-bootstrap-tpls-0.10.0.min.js' %}"></script>
