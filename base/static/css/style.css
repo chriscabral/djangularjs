@@ -13,7 +13,5 @@
 
    ========================================================================== */
 
-@import url('bootstrap.css');
-@import url('bootstrap-responsive.css');
-@import url('app.css');
+body{padding-top: 50px;padding-bottom: 20px;}
 

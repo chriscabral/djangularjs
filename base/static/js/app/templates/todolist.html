@@ -1,0 +1,10 @@
+<h3>Todo List</h3>
+
+<div ng-controller="TodoController" class="well well-lg">
+	<ol>
+		<li ng-cloak ng-repeat="todo in todolist | orderBy:'-completed	':'name'">
+			<input type="checkbox" ng-change="todoCheckedChange(todo)" ng-model="todo.completed"> {{ todo.name }} - {{ todo.description }}
+			<button ng-click="todoDelete(todo)" class="btn btn-default">Delete</button>
+		</li>
+	</ol>
+</div>

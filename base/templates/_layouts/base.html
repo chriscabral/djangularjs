@@ -14,20 +14,29 @@
   <meta name="author" content="{% block meta_author %}{% endblock %}">
   <meta name="viewport" content="width=device-width">
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <style>body{padding-top: 50px;padding-bottom: 20px;}</style>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body ng-app="mainapp">
-  <div ui-view="viewHeader"></div>
-  <div ui-view="viewBody"></div>
-  <div ui-view="viewFooter"></div>
-  <a ui-sref="state1">state1</a> <a ui-sref="state2">state2</a>
-
+  <div class="container theme-showcase" role="main">
+    <div ui-view="viewHeader"></div>
+    <div ui-view="viewBody"></div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary" ui-sref="todolist" btn-checkbox>Todo List</button>
+        <button type="button" class="btn btn-primary" ui-sref="addtodo" btn-checkbox>Create Todo</button>
+    </div>
+    <div ui-view="viewFooter"></div>
+  </div>
+  
   <script src="{% static 'js/lib/angularjs/jquery-1.11.0.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/bootstrap.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/angular.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/angular-ui-router.min.js' %}"></script>
+  <script src="{% static 'js/lib/angularjs/angular-resource.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/ng-grid-2.0.7.min.js' %}"></script>
   <script src="{% static 'js/lib/angularjs/ui-bootstrap-tpls-0.10.0.min.js' %}"></script>
   <script src="{% static 'js/app/config/initializer.js' %}"></script>
+  <script src="{% static 'js/app/resources/todo.js' %}"></script>
+  <script src="{% static 'js/app/controllers/todo.js' %}"></script>
 </body>
 </html>
+
