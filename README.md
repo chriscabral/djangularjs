@@ -24,6 +24,8 @@ For the following commands, replace projectname with a project name of your choo
     $ python manage.py runserver 0.0.0.0:8000
     
 Go to your local web browers and visit http://localhost:8000 and see what happens. 
+OR
+visit http://localhost:8000/api/v1/ to see the self documenting API. 
 
 
 Todo
