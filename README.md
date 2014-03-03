@@ -28,9 +28,7 @@ Go to your local web browers and visit http://localhost:8000 and see what happen
 
 Todo
 ===
-* Add more examples of the ui components available through the angular apps included. 
 * Auto register all models to the admin.
-* Create Django rest mixin for models that will auto create a restful endpoint.
 * Add mysql to installation script.
 * Add mysql as default database.
 * Testing mail ready status.
