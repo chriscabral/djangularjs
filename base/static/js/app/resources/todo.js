@@ -13,11 +13,17 @@ mainapp.factory('Api', ['$resource', function($resource) {
 			'update': {method: 'PUT', params: {id: "@id"}}
 		};
 	};
-	alert("returning resource");
 	return {
-		'TodoAppApi' : {
-				'TodoTask' : $resource(api('TodoTask/:id/#'), getJson(), getArray())
-			}
-		};
+				'TodoAppApi' : {
+					'TodoTask': $resource(api('TodoTask/:id/#'), getJson(), getArray())
+				},
+				'UserApi': {
+					'Login': $resource('/login/#', getJson(), {
+						'get': {method: 'GET', params: {}, isArray: false},
+						'login': {method: 'POST', params: {}, isArray: false}}
+						),
+					'Logout': $resource('/logout/#', getJson(), {'get': {method: 'GET', params: {}, isArray: false}}),
+				}
+			};
 }]);
 
