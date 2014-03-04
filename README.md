@@ -24,13 +24,13 @@ For the following commands, replace projectname with a project name of your choo
     $ python manage.py runserver 0.0.0.0:8000
     
 Go to your local web browers and visit http://localhost:8000 and see what happens. 
+OR
+visit http://localhost:8000/api/v1/ to see the self documenting API. 
 
 
 Todo
 ===
-* Add more examples of the ui components available through the angular apps included. 
 * Auto register all models to the admin.
-* Create Django rest mixin for models that will auto create a restful endpoint.
 * Add mysql to installation script.
 * Add mysql as default database.
 * Testing mail ready status.
