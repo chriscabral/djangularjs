@@ -3,6 +3,7 @@
 from django.shortcuts import render, render_to_response
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 import json
 
 def home(request):
@@ -31,3 +32,18 @@ def logout_view(request):
     """ logout """
     logout(request)
     return HttpResponse('{"success": true}')
+
+def register_view(request):
+    """ register """
+    if request.method == "POST":
+    	POST = json.loads(request.body)
+    	POST["username"] = POST.get("email", "")
+    	POST["password1"] = POST.get("password", "")
+    	POST["password2"] = POST.get("password", "")
+    	form = UserCreationForm(POST)
+        if form.is_valid():
+        	new_user = form.save()
+        	user = authenticate(username=POST["username"], password=POST["password"])
+        	login(request, user)
+        	return HttpResponse('{"success": true}')
+    return HttpResponse('{"success": false}')

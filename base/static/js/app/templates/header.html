@@ -10,8 +10,7 @@
       <a class="navbar-brand" href="#">Project name</a>
     </div>
     <div class="navbar-collapse collapse" ng-controller="LoginController">
-      <div ng-show="!logged_in">
-        {{ loggin_error }}
+      <div ng-cloak class="ng-cloak" ng-show="!logged_in">
         <form ng-submit="login()" class="navbar-form navbar-right" ng-class="{ 'has-error' : loggin_error }">
           <div class="form-group">
             <input type="text" placeholder="Username" ng-model="user.username" class="form-control">
@@ -20,9 +19,10 @@
             <input type="password" placeholder="Password" ng-model="user.password" class="form-control">
           </div>
           <button type="submit" class="btn btn-success">Sign in</button>
+          <button type="button" class="btn btn-success" ng-click="register()">Register</button>
         </form>
       </div>
-      <ul class="nav navbar-nav navbar-right" ng-show="logged_in">
+      <ul ng-cloak class="ng-cloak nav navbar-nav navbar-right" ng-show="logged_in">
         <li><a ng-click="logout()">Logout</a></li>
       </ul>
     </div>

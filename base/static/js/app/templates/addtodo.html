@@ -1,7 +1,7 @@
 <h3>Add Todo List</h3>
 
 <div ng-controller="TodoAddController" name="todoform" class="well well-lg">
-	<p class="bg-success" ng-show="success">{{ success }}</p>
+	<alert type="success" ng-show="success" close="closeAlert($index)">{{ success }}</alert>
 	<form novalidate class="simple-form" ng-model='data'>
 		<div class="form-group" ng-class="{ 'has-error' : errors.name }">
 			<label for="title">Title</label>

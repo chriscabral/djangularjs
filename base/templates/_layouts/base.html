@@ -18,7 +18,7 @@
 </head>
 <body ng-app="mainapp">
   <div class="container theme-showcase" role="main">
-    <div ui-view="viewHeader"></div>
+    <div ng-include src="'/static/js/app/templates/header.html'"></div>
     <div ui-view="viewBody"></div>
     <div class="btn-group">
         <button type="button" class="btn btn-primary" ui-sref="todolist" btn-checkbox>Todo List</button>
