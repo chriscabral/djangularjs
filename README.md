@@ -6,8 +6,8 @@ A project template for a single page app in django that uses, angularjs, bootstr
 
 Prerequisites
 ===
-* Virtualbox (https://www.virtualbox.org/wiki/Downloads)
-* Vagrant (http://www.vagrantup.com/downloads.html)
+* Virtualbox (https://www.virtualbox.org/wiki/Downloads) 4.3.6r91406
+* Vagrant (http://www.vagrantup.com/downloads.html) Vagrant 1.4.3
 * Python and Django
 
 Getting Started
